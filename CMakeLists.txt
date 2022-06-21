@@ -206,7 +206,7 @@ else()
 endif()
 
 if(WINDOWS AND BUILD_SHARED_LIBS)
-  target_link_libraries(LIB_LIEF ws2_32)
+  target_link_libraries(LIB_LIEF PRIVATE ws2_32)
 endif()
 
 if(MSVC OR ${IS_WIN_CROSS_COMPILE})
