@@ -319,6 +319,8 @@ void JsonVisitor::visit(const Section& section) {
   node_["entropy"]                = section.entropy();
   node_["characteristics"]        = characteristics;
   node_["types"]                  = types;
+  node_["size"]                   = section.sizeof_raw_data();
+  node_["vsize"]                  = section.virtual_size();
 }
 
 void JsonVisitor::visit(const Relocation& relocation) {
