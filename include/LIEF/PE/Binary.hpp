@@ -507,6 +507,9 @@ class LIEF_API Binary : public LIEF::Binary {
 
   std::ostream& print(std::ostream& os) const override;
 
+  LIEF::Binary::functions_t get_abstract_exported_functions() const override;
+  LIEF::Binary::functions_t get_abstract_imported_functions() const override;
+
   private:
   Binary();
 
@@ -524,8 +527,6 @@ class LIEF_API Binary : public LIEF::Binary {
 
   LIEF::Binary::relocations_t get_abstract_relocations() override;
 
-  LIEF::Binary::functions_t get_abstract_exported_functions() const override;
-  LIEF::Binary::functions_t get_abstract_imported_functions() const override;
   std::vector<std::string> get_abstract_imported_libraries() const override;
 
   void update_lookup_address_table_offset();
